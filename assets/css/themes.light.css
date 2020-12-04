@@ -102,6 +102,9 @@ hr,
 .lang-makefile {
   background: #427819;
 }
+.lang-others {
+  background: #ececec;
+}
 
 /* Brand Colors */
 .t-title__first-word {
