@@ -1,0 +1,24 @@
+{
+  "name": "@fnogatz/website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal website of Falco Nogatz",
+  "scripts": {
+    "test": "npm run check",
+    "format": "prettier --write \".\"",
+    "check": "prettier --check \".\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fnogatz/fnogatz.github.io.git"
+  },
+  "author": "Falco Nogatz <fnogatz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fnogatz/fnogatz.github.io/issues"
+  },
+  "homepage": "https://github.com/fnogatz/fnogatz.github.io#readme",
+  "devDependencies": {
+    "prettier": "2.3.2"
+  }
+}
