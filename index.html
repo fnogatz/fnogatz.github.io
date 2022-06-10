@@ -1781,6 +1781,291 @@
                 <div class="c-intro">
                   <div class="o-content__body">
                     <table id="teachTable" class="display"></table>
+
+                    <h3 id="open-topics">Open Topics</h3>
+                    <ul class="open-topics">
+                      <li class="item">
+                        <div class="text-content">
+                          <h4>
+                            Constraint Handling Rules as a Library with
+                            Delimited Control
+                          </h4>
+                          <span> BA/MA/Projekt</span>
+                          <p>
+                            <a href="https://arxiv.org/pdf/1701.02668.pdf"
+                              >Constraint Handling Rules</a
+                            >
+                            (CHR) is a declarative, rule-based programming
+                            language. Its syntax consists of just three
+                            committed-choice multi-set transformation rules and
+                            is thus fairly simple. There are implementations and
+                            embeddings for many programming languages such as C,
+                            Java, Haskell, and JavaScript. However, CHR’s most
+                            popular host language remains Prolog. Current
+                            implementations of CHR in Prolog rely on Prolog’s
+                            implicit execution stack, others use attributed
+                            variables. In this project, we want to implement a
+                            new compilation scheme to Prolog based on
+                            <a
+                              href="https://people.cs.kuleuven.be/~tom.schrijvers/Research/papers/iclp2013.pdf"
+                              >delimited continuations</a
+                            >. This takes up the idea of an explicit stack,
+                            which is a common optimisation technique when
+                            <a
+                              href="https://www.informatik.uni-ulm.de/pm/fileadmin/pm/home/fruehwirth/drafts/Nogatz-draft.pdf"
+                              >compiling CHR to imperative programming
+                              languages</a
+                            >. Delimited continuations have already been
+                            successfully used to efficiently implement
+                            <a href="https://arxiv.org/pdf/1507.08087.pdf"
+                              >tabling</a
+                            >
+                            in Prolog – so it might be worth considering them
+                            for CHR, too.
+                          </p>
+                          <ul>
+                            <li>linked data</li>
+                            <li>open data</li>
+                            <li>semantic web</li>
+                            <li>smart city</li>
+                            <li>visualization</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item">
+                        <div class="text-content">
+                          <h4>XPCE Compatibility for SWISH</h4>
+                          <span> BA/MA/Projekt</span>
+                          <p>
+                            <a href="http://www.swi-prolog.org/packages/xpce/"
+                              >XPCE</a
+                            >
+                            was the way to go for graphical user interfaces with
+                            SWI-Prolog. In recent years, with
+                            <a href="https://swish.swi-prolog.org/">SWISH</a>,
+                            SWI-Prolog moved to the browser as the most
+                            important GUI, leaving XPCE unsupported and almost
+                            deprecated. We want to examine typical XPCE
+                            applications and provide mechanisms to convert them
+                            to SWISH applications.
+                          </p>
+                          <ul>
+                            <li>GUI</li>
+                            <li>program transformation</li>
+                            <li>Prolog</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item">
+                        <div class="text-content">
+                          <h4>OpenRuleBench Revised</h4>
+                          <span> BA/MA/Projekt</span>
+                          <p>
+                            <a
+                              href="https://www3.cs.stonybrook.edu/~pfodor/openrulebench_web/"
+                              >OpenRuleBench</a
+                            >
+                            is a suite of benchmarks for analysing the
+                            performance and scalability of different rule
+                            engines. The original benchmarks were run first in
+                            2009, an updated report was published in 2011. Since
+                            then, the benchmarks have not been re-run. In this
+                            work, we want to create an experimental setup to run
+                            various tests on different systems, similar to our
+                            <a href="https://github.com/fnogatz/CHR-Benchmarks"
+                              >CHR Benchmark suite</a
+                            >. It should allow to validate the original results,
+                            and to re-run the tests with modern rule engines.
+                            This could result in a public test server to compare
+                            existing and new logic programming systems and their
+                            strengths.
+                          </p>
+                          <ul>
+                            <li>benchmarks</li>
+                            <li>declarative programming</li>
+                            <li>Prolog</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item">
+                        <div class="text-content">
+                          <h4>
+                            A Controlled Natural Language for COVID Regulations
+                          </h4>
+                          <span> BA/MA</span>
+                          <p>
+                            In the past two years, the Coronavirus disease
+                            COVID-19 had a strong impact on most parts of our
+                            everyday life. People had to wear masks under some
+                            conditions, like the number of persons in a group or
+                            the size of the room. These conditions have been
+                            determined by the government in more than 30
+                            regulations. In this work, we want to tailor the
+                            corpus of these regulations towards a more
+                            controlled natural language so they can be easily
+                            used by both humans and machines, e.g., to
+                            automatically identify inconsistencies. Because the
+                            <a
+                              href="https://corona.rlp.de/de/service/rechtsgrundlagen/"
+                              >Corona-Bekämpfungsverordnung</a
+                            >
+                            (CoBeLVO) is in German, a good knowledge of German
+                            is required.
+                          </p>
+                          <ul>
+                            <li>controlled natural language</li>
+                            <li>domain-specific language</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item">
+                        <div class="text-content">
+                          <h4>
+                            Statistische Jahresberichte auf Basis von Linked
+                            Open Data
+                          </h4>
+                          <span> BA/MA/Projekt/Hiwi</span>
+                          <p>
+                            Viele Kommunen in Deutschland veröffentlichen
+                            jährlich einen statistischen Jahresbericht. Diese
+                            Statistiken beinhalten u.a. soziodemografische
+                            Informationen zur Bevölkerung (z.B. Alter,
+                            Familienstand), zur Wirtschaft (z.B. Gewerbesteuer,
+                            Insolvenzverfahren) und Verkehr (z.B.
+                            PKW-Neuzulassungen, Verkehrsunfälle), und zu Kultur
+                            und Sport (z.B. Bibliotheksbestand,
+                            Vereinsmitgliedschaften). Sie sind wertvolle
+                            Ratgeber für Planung, Handel und Politik. Trotz
+                            ihres großen Nutzens ist die Erstellung der oft
+                            mehrere hundert Seiten langen Jahresberichte aber
+                            noch weitestgehend Handarbeit: Statistiken werden
+                            mühevoll zusammengetragen und Visualisierungen
+                            erstellt – eine Tätigkeit, die sich durch Linked
+                            (Open) Data vollständig automatisieren ließe. Ziel
+                            dieser Arbeit ist es, am Beispiel der Stadt
+                            Kaiserslautern den statistischen Jahresbericht als
+                            Linked (Open) Data umzusetzen und eine interaktive
+                            Darstellung zu ermöglichen, die über die bisherige
+                            Druckfassung hinausgeht. Für die Materialien und
+                            Anwendungspartner sind gute Deutschkenntnisse
+                            erforderlich.
+                          </p>
+                          <ul>
+                            <li>linked data</li>
+                            <li>open data</li>
+                            <li>semantic web</li>
+                            <li>smart city</li>
+                            <li>visualization</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item">
+                        <div class="text-content">
+                          <h4>Bisecting Debugger for SWI-Prolog</h4>
+                          <span>BA/Project</span>
+                          <p>
+                            Although it is hard to admit: most of the time we
+                            are actually not writing code but instead debug
+                            existing. Due to its good backtracking and tracing
+                            abilities, debugging in Prolog could benefit from a
+                            bisecting debugger as
+                            <a href="https://youtu.be/G_eYTctGZw8?t=15m33s"
+                              >described by Michael Hendricks at Strange Loop
+                              2014</a
+                            >. In this work we want to enhance SWI-Prolog’s
+                            built-in debugger with this functionality.
+                          </p>
+                          <ul>
+                            <li>debugging</li>
+                            <li>IDE</li>
+                            <li>program transformation</li>
+                            <li>Prolog</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item">
+                        <div class="text-content">
+                          <h4>A Style Linter for Prolog</h4>
+                          <span>BA/MA/Project</span>
+                          <p>
+                            Although there are several style guides for Prolog,
+                            it is hard to enforce one in existing programs due
+                            to the lack of related tools and machine-readable
+                            representation. In other programming languages there
+                            are separate, flexible tools just to ensure a
+                            consistent coding style, for example
+                            <a href="https://prettier.io/">Prettier</a> or the
+                            <a href="http://standardjs.com/"
+                              >JavaScript standard style</a
+                            >. In this work we want to adapt these concepts and
+                            integrate a Prolog linter into CI workflows and
+                            IDEs, with respect to Prolog’s syntax, and based on
+                            our
+                            <a
+                              href="https://www.krin.gs/publication/nogatz-linter-iclp19/nogatz-linter-iclp19.pdf"
+                              >previous work</a
+                            >.
+                          </p>
+                          <ul>
+                            <li>coding guidelines</li>
+                            <li>continuous integration</li>
+                            <li>Prolog</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item">
+                        <div class="text-content">
+                          <h4>Benchmarking CHR Systems</h4>
+                          <span>BA/Project</span>
+                          <p>
+                            <a href="https://arxiv.org/pdf/1701.02668.pdf"
+                              >Constraint Handling Rules</a
+                            >
+                            (CHR) is a very simple but powerful rule-based
+                            language. Besides its most popular implementation as
+                            a library for SWI-Prolog, there exist CHR systems in
+                            C, Haskell, and JavaScript. More than 30 years after
+                            the creation of CHR, the existing implementations
+                            should be compared regarding supported features and
+                            performance, extending
+                            <a href="https://github.com/fnogatz/CHR-Benchmarks"
+                              >our previous work</a
+                            >.
+                          </p>
+                          <ul>
+                            <li>benchmarks</li>
+                            <li>CHR</li>
+                            <li>declarative programming</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="item">
+                        <div class="text-content">
+                          <h4>Optimising Definite Clause Grammars</h4>
+                          <span>MA/Project</span>
+                          <p>
+                            Definite Clause Grammars (DCG) can be easily written
+                            by hand and are therefore a good alternative to
+                            parser implementations based on LL(k), LF or PEG.
+                            Nevertheless, such hand-written grammars tend to be
+                            not optimal: Several parts of the parse tree have to
+                            be evaluated several times for the same expression
+                            because of its backtracking nature. Using
+                            source-to-source transformation the DCG can be
+                            rewritten into an optimal version, which should be
+                            done in Prolog as part of this work.
+                          </p>
+                          <ul>
+                            <li>backtracking</li>
+                            <li>compiler</li>
+                            <li>context-free grammar</li>
+                            <li>parser</li>
+                            <li>program transformation</li>
+                            <li>Prolog</li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>

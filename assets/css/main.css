@@ -2246,3 +2246,82 @@ span.sc {
 #teaching .o-media--block > .o-media__figure {
   width: 3.5rem;
 }
+
+#supervision h3 {
+  color: #779ffb;
+  margin: 40px 0 20px 0;
+}
+
+.open-topics {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.open-topics .item:nth-child(odd) {
+  background: #f8f8f8;
+}
+.open-topics .item {
+  position: relative;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+.open-topics .item::after {
+  display: block;
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  font: 32px/50px FontAwesome;
+  content: "\f107";
+}
+.open-topics .item.open::after {
+  content: "\f106";
+}
+
+.open-topics .item .text-content h4 {
+  padding-right: 50px;
+}
+
+.open-topics .item .text-content span {
+  margin-bottom: 5px;
+}
+
+.open-topics .item:not(.open) p,
+.open-topics .item:not(.open) p + ul {
+  display: none;
+}
+
+.open-topics .item .text-content > p {
+  margin-top: 10px;
+  border-left: 3px solid #ccc;
+  padding-left: 10px;
+}
+.open-topics .item .text-content > p + ul {
+  padding: 0;
+  margin: 0;
+}
+.open-topics .item .text-content > p + ul::before {
+  display: inline-block;
+  content: "Keywords:";
+  margin-right: 12px;
+}
+.open-topics .item .text-content > p + ul li {
+  display: inline;
+  font-style: italic;
+}
+.open-topics .item .text-content > p + ul li,
+.open-topics .item .text-content > p + ul::before {
+  font-size: 13px;
+  color: #7a7a7a;
+  line-height: 24px;
+}
+.open-topics .item .text-content > p + ul li::before {
+  display: inline-block;
+  content: "\b7";
+  width: 12px;
+  text-align: center;
+}
+.open-topics .item .text-content > p + ul li:first-child::before {
+  display: none;
+}

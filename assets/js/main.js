@@ -30,4 +30,8 @@ $(document).ready(function () {
         }
       });
   });
+
+  $(".open-topics li").click(function (e) {
+    $(this).toggleClass("open");
+  });
 });
