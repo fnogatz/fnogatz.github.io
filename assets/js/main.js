@@ -1,8 +1,16 @@
 $(document).ready(function () {
   $("html").addClass("js-enabled");
-  bibtexify("publications.bib", "pubTable", {
+  bibtexify("data/publications.bib", "pubTable", {
     datatable: {
       bFilter: false,
+      bAutoWidth: false,
+    },
+  });
+
+  bibtexify("data/teaching.bib", "teachTable", {
+    datatable: {
+      bFilter: false,
+      bAutoWidth: false,
     },
   });
 

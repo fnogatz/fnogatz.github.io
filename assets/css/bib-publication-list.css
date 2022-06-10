@@ -58,6 +58,21 @@ span.undefined {
 .book {
   background-color: #ed7878;
 }
+.thesisMaster,
+.thesisDiplom {
+  background-color: #cd5c5c;
+}
+.thesisBachelor,
+.thesisZulassungsarbeit {
+  background-color: #fdc1c1;
+}
+.thesisProject {
+  background-color: #fdd233;
+}
+.thesisSeminar,
+.thesisStudienarbeit {
+  background-color: #d9a35e;
+}
 .legend .pub {
   width: 10px;
   height: 10px;

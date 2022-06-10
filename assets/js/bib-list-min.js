@@ -102,16 +102,16 @@
  * setOption(). When setting in the constructor the options are given in an
  * associative array. The options are:
  *
- * 	-	stripDelimiter (default: true) Stripping the delimiter surrounding the entries.
- * 	-	validate (default: true) Validation while parsing.
- * 	-	unwrap (default: false) Unwrapping entries while parsing.
- * 	-	wordWrapWidth (default: false) If set to a number higher one
- * 	    that the entries are wrapped after that amount of characters.
- * 	-	wordWrapBreak (default: \n) String used to break the line (attached to the line).
- * 	-	wordWrapCut (default: 0) If set to zero the line will we
- * 	    wrapped at the next possible space, if set to one the line will be
- * 	    wrapped exactly after the given amount of characters.
- * 	-	removeCurlyBraces (default: false) If set to true Curly Braces will be removed.
+ *  - stripDelimiter (default: true) Stripping the delimiter surrounding the entries.
+ *  - validate (default: true) Validation while parsing.
+ *  - unwrap (default: false) Unwrapping entries while parsing.
+ *  - wordWrapWidth (default: false) If set to a number higher one
+ *      that the entries are wrapped after that amount of characters.
+ *  - wordWrapBreak (default: \n) String used to break the line (attached to the line).
+ *  - wordWrapCut (default: 0) If set to zero the line will we
+ *      wrapped at the next possible space, if set to one the line will be
+ *      wrapped exactly after the given amount of characters.
+ *  - removeCurlyBraces (default: false) If set to true Curly Braces will be removed.
  *
  * Example of setting options in the constructor:
  *
@@ -133,12 +133,12 @@
  * the hash table correspond to the keys used in bibtex and the values are
  * the corresponding values. Some of these keys are:
  *
- * 	-	cite - The key used in a LaTeX source to do the citing.
- * 	-	entryType - The type of the entry, like techreport, book and so on.
- * 	-	author - One or more authors of the entry. This entry is also a
- * 	    list with hash tables representing the authors as entries. The
- * 	    author has table is explained later.
- * 	-	title - Title of the entry.
+ *  - cite - The key used in a LaTeX source to do the citing.
+ *  - entryType - The type of the entry, like techreport, book and so on.
+ *  - author - One or more authors of the entry. This entry is also a
+ *      list with hash tables representing the authors as entries. The
+ *      author has table is explained later.
+ *  - title - Title of the entry.
  *
  * Author
  * ------
@@ -147,12 +147,12 @@
  * keys: first, von, last and jr. The keys are explained in the following
  * list:
  *
- * 	-	first - The first name of the author.
- * 	-	von - Some names have a 'von' part in their name. This is usually a sign of nobleness.
- * 	-	last - The last name of the author.
- * 	-	jr - Sometimes a author is the son of his father and has the
- * 	    same name, then the value would be jr. The same is true for the
- * 	    value sen but vice versa.
+ *  - first - The first name of the author.
+ *  - von - Some names have a 'von' part in their name. This is usually a sign of nobleness.
+ *  - last - The last name of the author.
+ *  - jr - Sometimes a author is the son of his father and has the
+ *      same name, then the value would be jr. The same is true for the
+ *      value sen but vice versa.
  *
  * Adding an entry
  * ----------------
@@ -4291,7 +4291,9 @@ var bibtexify = (function ($) {
       .replace(/\\'A/g, "&Aacute;")
       .replace(/\\"o/g, "&ouml;")
       .replace(/\\"u/g, "&uuml;")
-      .replace(/\\ss\{\}/g, "&szlig;")
+      .replace(/\\ss/g, "&szlig;")
+      .replace(/\\AA/g, "&Aring;")
+      .replace(/\\aa/g, "&aring;")
       .replace(/\{/g, "")
       .replace(/\}/g, "")
       .replace(/\\&/g, "&")
@@ -4328,6 +4330,17 @@ var bibtexify = (function ($) {
         type = "misc";
         entryData.entryType = type;
       }
+      if (
+        type === "thesis" &&
+        typeof entryData.type !== "undefined" &&
+        Object.keys(bib2html.labels).find(
+          (key) => bib2html.labels[key] === entryData.type
+        )
+      ) {
+        entryData.entryType = Object.keys(bib2html.labels).find(
+          (key) => bib2html.labels[key] === entryData.type
+        );
+      }
       var itemStr = htmlify(bib2html[type](entryData));
       itemStr += bib2html.links(entryData);
       itemStr += bib2html.bibtex(entryData);
@@ -4338,6 +4351,26 @@ var bibtexify = (function ($) {
         /undefined[,.]?/g,
         '<span class="undefined">missing</span>'
       );
+    },
+    label2html: function (type) {
+      switch (type) {
+        case "Bachelor's Thesis":
+          return '<abbr title="Bachelor Thesis">BSc.</abbr>';
+        case "Master's Thesis":
+          return '<abbr title="Master Thesis">MSc.</abbr>';
+        case "Diploma's Thesis":
+          return '<abbr title="Diploma Thesis">Diploma</abbr>';
+        case "Seminar":
+          return '<abbr title="Seminar Paper">Seminar</abbr>';
+        case "Student Research Project":
+          return '<abbr title="Studienarbeit">StA</abbr>';
+        case "Zulassungsarbeit":
+          return '<abbr title="Zulassungsarbeit">ZA</abbr>';
+        case "Student Project":
+          return '<abbr title="Student Project">Project</abbr>';
+        default:
+          return type;
+      }
     },
     authors2html: function (authorData) {
       var authorsStr = "";
@@ -4558,6 +4591,14 @@ var bibtexify = (function ($) {
         (entryData.note ? entryData.note : "")
       );
     },
+    thesis: function (entryData) {
+      let str = "";
+      if (entryData.author) {
+        str += `${this.authors2html(entryData.author)}: `;
+      }
+      str += `<em>${entryData.title}</em>. ${entryData.type}, ${entryData.school}.`;
+      return str;
+    },
     importance: {
       TITLE: 9999,
       misc: 0,
@@ -4589,6 +4630,13 @@ var bibtexify = (function ($) {
       proceedings: "Conference proceeding",
       techreport: "Technical report",
       unpublished: "Unpublished",
+      thesisMaster: "Master's Thesis",
+      thesisBachelor: "Bachelor's Thesis",
+      thesisDiplom: "Diploma's Thesis",
+      thesisSeminar: "Seminar",
+      thesisZulassungsarbeit: "Zulassungsarbeit",
+      thesisStudienarbeit: "Student Research Project",
+      thesisProject: "Student Project",
     },
   };
   bib2html.phdthesis = bib2html.mastersthesis;
@@ -4627,7 +4675,11 @@ var bibtexify = (function ($) {
       }
       try {
         var html = bib2html.entry2html(item, this);
-        bibentries.push([item.year, bib2html.labels[item.entryType], html]);
+        bibentries.push([
+          item.year,
+          bib2html.label2html(bib2html.labels[item.entryType]),
+          html,
+        ]);
         entryTypes[bib2html.labels[item.entryType]] = item.entryType;
         this.updateStats(item);
       } catch (e) {
@@ -4686,6 +4738,9 @@ var bibtexify = (function ($) {
       });
     $(".biblink", this.$pubTable).on("click", EventHandlers.showbib);
     $(".bibclose", this.$pubTable).on("click", EventHandlers.hidebib);
+    if (this.options.onFinish && typeof this.options.onFinish === "function") {
+      this.options.onFinish();
+    }
   };
   bibproto.updateStats = function updateStats(item) {
     if (!this.stats[item.year]) {

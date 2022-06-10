@@ -2242,3 +2242,7 @@ a.pdf {
 span.sc {
   font-variant: small-caps;
 }
+
+#teaching .o-media--block > .o-media__figure {
+  width: 3.5rem;
+}
