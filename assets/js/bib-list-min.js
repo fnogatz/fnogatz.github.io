@@ -4441,19 +4441,13 @@ var bibtexify = (function ($) {
       return itemStr;
     },
     inproceedings: function (entryData) {
-      return (
-        this.authors2html(entryData.author) +
-        " (" +
-        entryData.year +
-        "). " +
-        entryData.title +
-        ". In <em>" +
-        entryData.booktitle +
-        ", pp. " +
-        entryData.pages +
-        (entryData.address ? ", " + entryData.address : "") +
-        ".</em>"
-      );
+      return `${this.authors2html(entryData.author)} (${entryData.year}) ${
+        entryData.title
+      }. In <em>${entryData.booktitle}${
+        entryData.pages ? `, pp. ${entryData.pages}` : ""
+      }${entryData.address ? `, ` + entryData.address : ""}</em>${
+        entryData.note ? ` ${entryData.note}.` : ""
+      }`;
     },
     incollection: function (entryData) {
       return (
