@@ -1970,6 +1970,9 @@ img[height] {
 .c-brand__sizer {
   font-size: 65%;
 }
+.post.c-brand__sizer {
+  font-size: 2em;
+}
 
 @media (min-width: 1024px) {
   .c-brand__title {
@@ -2324,4 +2327,58 @@ span.sc {
 }
 .open-topics .item .text-content > p + ul li:first-child::before {
   display: none;
+}
+.tag {
+  display: block;
+  margin-bottom: 5px;
+}
+.tag > span {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 16px;
+  box-shadow: 0 0 0 2px #fcfcfc !important;
+}
+.tag-schach {
+  background: #cd5c5c !important;
+  color: #fff;
+}
+.tag-post-sv-neustadt {
+  background: #fdd233 !important;
+  color: #000;
+}
+.tag-sv-weilerbach {
+  background: #d9a35e !important;
+  color: #fff;
+}
+.page-nav > a {
+  display: block;
+  width: 50%;
+  float: left;
+}
+.page-nav > a.next {
+  text-align: right;
+  float: right;
+}
+a.post {
+  color: #939393;
+}
+.lang {
+  border: 1px solid #ccc;
+}
+.post .lang-de::after {
+  display: inline-block;
+  content: "DE";
+  color: #a6a6a6;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  box-shadow: 0 0 0 2px #fcfcfc !important;
+  font-size: 65%;
+  line-height: 12px;
+  margin-left: 8px;
+  padding: 2px 8px;
+  margin-top: -8px;
+}
+p.original-url {
+  font-style: italic;
+  margin: 25px 0 15px 0;
 }

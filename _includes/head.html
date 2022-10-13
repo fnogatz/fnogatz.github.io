@@ -1,0 +1,71 @@
+<title>
+  {% if page.title %} {{page.title}} &middot; {% endif %}Falco Nogatz
+</title>
+
+<meta
+  name="description"
+  content="Falco Nogatz – I'm a 32-year-old Researcher at the SmartCity Living Lab of the German Research Center for Artificial Intelligence (DFKI), interested in declarative programming, web development and chess."
+/>
+<meta name="author" content="Falco Nogatz" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en" />
+<meta property="og:site_name" content="Falco Nogatz" />
+<meta property="og:title" content="Falco Nogatz" />
+<meta property="og:url" content="https://nogatz.net/" />
+<meta
+  property="og:description"
+  content="Falco Nogatz – I'm a 32-year-old Researcher at the SmartCity Living Lab of the German Research Center for Artificial Intelligence (DFKI), interested in declarative programming, web development and chess."
+/>
+<link rel="canonical" href="https://nogatz.net/" />
+
+<meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+<!-- FontAwesome -->
+<link
+  href="{{ 'assets/plugins/font-awesome/css/all.css' | relative_url }}"
+  rel="stylesheet"
+/>
+<link
+  href="{{ 'assets/plugins/academicons/css/academicons.min.css' | relative_url }}"
+  rel="stylesheet"
+/>
+
+<link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url }}" />
+<link
+  rel="stylesheet"
+  href="{{ 'assets/css/themes.light.css' | relative_url }}"
+/>
+<link
+  rel="stylesheet"
+  href="{{ 'assets/css/vendor/lato.font.css' | relative_url }}"
+/>
+
+<!-- jQuery -->
+<script src="{{ 'assets/js/jquery.min.js' | relative_url }}"></script>
+
+{% if layout.custom_css %} {% for stylesheet in layout.custom_css %}
+<link
+  rel="stylesheet"
+  href="{{ 'assets/css/' | append: stylesheet | append: '.css' | relative_url }}"
+/>
+{% endfor %} {% endif %} {% if page.custom_css %} {% for stylesheet in
+page.custom_css %}
+<link
+  rel="stylesheet"
+  href="{{ 'assets/css/' | append: stylesheet | append: '.css' | relative_url }}"
+/>
+{% endfor %} {% endif %} {% if layout.custom_js %} {% for javascript in
+layout.custom_js %}
+<script src="{{ 'assets/js/' | append: javascript | append: '.js' | relative_url }}"></script>
+{% endfor %} {% endif %} {% if page.custom_js %} {% for stylesheet in
+page.custom_js %}
+<script src="{{ 'assets/js/' | append: javascript | append: '.js' | relative_url }}"></script>
+{% endfor %} {% endif %}
+
+<!-- Main JS -->
+<script src="{{ 'assets/js/main.js' | relative_url }}"></script>
