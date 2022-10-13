@@ -9,9 +9,7 @@ original_url: "https://www.postsv-schach.de/?Mannschaften/1.-Mannschaft/Saison-2
 ---
 
 Mit der längsten Auswärtsfahrt startete am Sonntag die 1. Mannschaft in die neue Saison der 2. Rheinland-Pfalz-Liga Süd.
-
 <!--more-->
-
 Auch wenn die Neustadter sich im Vorjahr von dem gastgebenden SK Bingen noch mit 3,5:3,5 unentschieden getrennt hatten und sich am Saisonende als direkte Nachbarn in der Tabelle wiederfanden, startete das neuerliche Aufeinandertreffen unter anderen Vorzeichen: Bingen musste zur Auftaktrunde drei Stammspieler ersetzen und ging so nur als Außenseiter in die in dieser Saison wieder acht Bretter umfassende Begegnung. Auf der anderen Seite erwartete sie eine mit Vorjahrestopscorer Volker Dries (vormals 2. Mannschaft) und Neuzugang Falco Nogatz (vormals SC Weilerbach) nochmals verstärkte Neustadter Mannschaft.
 
 Trotz der nominellen Überlegenheit stellten sich nur langsam erste Vorteile auf Seiten der Neustadter ein. Einzig Wolfgang Gaab konnte an Brett 7 früh Figur um Figur und schließlich die Partie gewinnen. Dann lockte auch Klaus Klein an Brett 4 seinen Gegner in ein taktisches Dickicht, in dem dieser schließlich den Überblick und die Partie verlor. Doch beim zwischenzeitlichen 2,5:0,5 durch das Remis von Stefan Vautrin sollte es zunächst lange bleiben.
