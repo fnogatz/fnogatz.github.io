@@ -134,51 +134,6 @@ layout: home
 <!-- /o-section -->
 
 <!-- ################################ -->
-<!-- ############ POSTS ############# -->
-<!-- ################################ -->
-
-<section class="o-section t-section" id="texts">
-  <div class="o-section__header-bg t-section__header"></div>
-  <div class="o-section__content-bg t-section__content"></div>
-
-  <div class="o-container">
-    <div class="o-section__container">
-      <header class="o-section__header t-section__header">
-        <div class="o-content">
-          <h2 class="o-section__heading">Texts</h2>
-          <div class="o-content__body o-section__description">
-            ... that I wrote for other audiences.
-          </div>
-        </div>
-      </header>
-      <!-- /o-section__header -->
-
-      <div class="o-section__content t-section__content">
-        {% for post in site.posts limit:3 %}
-        <a href="{{ post.url }}" class="post">
-          <div class="o-content">
-            <hr
-              class="c-deco-line t-primary-color-line tag-{{ post.tags[0] | slugify }}"
-            />
-            <div class="o-content__body">
-              <h3 class="lang-{{ post.language }}">{{ post.title }}</h3>
-              <h4>{{ post.date | date: "%-d %B %Y" }}</h4>
-              <p>{{ post.excerpt }}</p>
-            </div>
-          </div>
-          <!-- /o-content -->
-        </a>
-        {% endfor %}
-      </div>
-      <!-- /o-section__content -->
-    </div>
-    <!-- /o-section__container -->
-  </div>
-  <!-- /o-container -->
-</section>
-<!-- /o-section -->
-
-<!-- ################################ -->
 <!-- ########### PROFILES ########### -->
 <!-- ################################ -->
 
@@ -2155,6 +2110,51 @@ layout: home
           <!-- /o-grid__col -->
         </div>
         <!-- /o-grid -->
+      </div>
+      <!-- /o-section__content -->
+    </div>
+    <!-- /o-section__container -->
+  </div>
+  <!-- /o-container -->
+</section>
+<!-- /o-section -->
+
+<!-- ################################ -->
+<!-- ############ POSTS ############# -->
+<!-- ################################ -->
+
+<section class="o-section t-section" id="texts">
+  <div class="o-section__header-bg t-section__header"></div>
+  <div class="o-section__content-bg t-section__content"></div>
+
+  <div class="o-container">
+    <div class="o-section__container">
+      <header class="o-section__header t-section__header">
+        <div class="o-content">
+          <h2 class="o-section__heading">Texts</h2>
+          <div class="o-content__body o-section__description">
+            ... that I wrote for other audiences.
+          </div>
+        </div>
+      </header>
+      <!-- /o-section__header -->
+
+      <div class="o-section__content t-section__content">
+        {% for post in site.posts limit:3 %}
+        <a href="{{ post.url }}" class="post">
+          <div class="o-content">
+            <hr
+              class="c-deco-line t-primary-color-line tag-{{ post.tags[0] | slugify }}"
+            />
+            <div class="o-content__body">
+              <h3 class="lang-{{ post.language }}">{{ post.title }}</h3>
+              <h4>{{ post.date | date: "%-d %B %Y" }}</h4>
+              <p>{{ post.excerpt }}</p>
+            </div>
+          </div>
+          <!-- /o-content -->
+        </a>
+        {% endfor %}
       </div>
       <!-- /o-section__content -->
     </div>
