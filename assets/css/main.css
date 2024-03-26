@@ -2273,13 +2273,18 @@ span.sc {
 .open-topics .item::after {
   display: block;
   position: absolute;
-  right: 30px;
-  top: 10px;
-  font: 32px/50px FontAwesome;
-  content: "\f107";
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #939393;
+  top: 20px;
+  right: 20px;
 }
 .open-topics .item.open::after {
-  content: "\f106";
+  border-bottom: 10px solid #939393;
+  border-top: none;
 }
 
 .open-topics .item .text-content h4 {
