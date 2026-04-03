@@ -518,7 +518,7 @@ function BibTex(options) {
     "phdthesis",
     "proceedings",
     "techreport",
-    "unpublished"
+    "unpublished",
   );
   this.authorstring = "VON LAST, JR, FIRST";
 }
@@ -606,7 +606,7 @@ BibTex.prototype = {
         }
         this._generateWarning(
           "WARNING_MULTIPLE_ENTRIES",
-          implode(",", notuniques)
+          implode(",", notuniques),
         );
       }
     }
@@ -628,7 +628,7 @@ BibTex.prototype = {
         this._generateWarning(
           "STRING_ENTRY_NOT_YET_SUPPORTED",
           "",
-          entry + "}"
+          entry + "}",
         );
       }
     } else {
@@ -637,7 +637,7 @@ BibTex.prototype = {
           this._generateWarning(
             "PREAMBLE_ENTRY_NOT_YET_SUPPORTED",
             "",
-            entry + "}"
+            entry + "}",
           );
         }
       } else {
@@ -694,7 +694,7 @@ BibTex.prototype = {
             this._generateWarning(
               "WARNING_NOT_ALLOWED_ENTRY_TYPE",
               ret.entryType,
-              entry + "}"
+              entry + "}",
             );
           }
         }
@@ -823,7 +823,7 @@ BibTex.prototype = {
         entry,
         this._options.wordWrapWidth,
         this._options.wordWrapBreak,
-        this._options.wordWrapCut
+        this._options.wordWrapCut,
       );
     }
     return entry;
@@ -996,7 +996,7 @@ BibTex.prototype = {
       this._generateWarning(
         "WARNING_ESCAPED_DOUBLE_QUOTE_INSIDE_DOUBLE_QUOTES",
         entry,
-        wholeentry
+        wholeentry,
       );
     }
     var open = 0;
@@ -1016,7 +1016,7 @@ BibTex.prototype = {
       this._generateWarning(
         "WARNING_UNBALANCED_AMOUNT_OF_BRACES",
         entry,
-        wholeentry
+        wholeentry,
       );
     }
   },
@@ -1183,7 +1183,7 @@ BibTex.prototype = {
         this._generateWarning(
           "WARNING_LINE_WAS_NOT_CONVERTED",
           "",
-          print_r(entry, 1)
+          print_r(entry, 1),
         );
       }
     }
@@ -1237,7 +1237,7 @@ BibTex.prototype = {
         this._generateWarning(
           "WARNING_LINE_WAS_NOT_CONVERTED",
           "",
-          print_r(entry, 1)
+          print_r(entry, 1),
         );
       }
     }
@@ -1481,7 +1481,7 @@ BibTex.prototype = {
         var iPageCount = _oExt.oPagination.iFullNumbersShowPages;
         var iPageCountHalf = Math.floor(iPageCount / 2);
         var iPages = Math.ceil(
-          oSettings.fnRecordsDisplay() / oSettings._iDisplayLength
+          oSettings.fnRecordsDisplay() / oSettings._iDisplayLength,
         );
         var iCurrentPage =
           Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength) + 1;
@@ -1551,7 +1551,7 @@ BibTex.prototype = {
               " " +
               oClasses.sPageButtonActive +
               " " +
-              oClasses.sPageButtonStaticDisabled
+              oClasses.sPageButtonStaticDisabled,
           );
           if (iCurrentPage == 1) {
             anStatic[0].className += " " + oClasses.sPageButtonStaticDisabled;
@@ -1780,7 +1780,7 @@ BibTex.prototype = {
         _fnFilterComplete(
           oSettings,
           { sSearch: sInput, bEscapeRegex: bEscapeRegex },
-          1
+          1,
         );
       } else {
         oSettings.aoPreSearchCols[iColumn].sSearch = sInput;
@@ -1818,7 +1818,7 @@ BibTex.prototype = {
         _fnSettingsFromNode(this[_oExt.iApiIndex]),
         nNode,
         iColumn,
-        fnCallback
+        fnCallback,
       );
     };
     this.fnAddData = function (mData, bRedraw) {
@@ -1998,7 +1998,7 @@ BibTex.prototype = {
         if (mData.length != oSettings.aoColumns.length) {
           alert(
             "DataTables warning: An array passed to fnUpdate must have the same number of columns as the table in question - in this case " +
-              oSettings.aoColumns.length
+              oSettings.aoColumns.length,
           );
           return 1;
         }
@@ -2072,12 +2072,12 @@ BibTex.prototype = {
           }
           nTrHead.insertBefore(
             anTheadTh[iCol],
-            nTrHead.getElementsByTagName("th")[iBefore]
+            nTrHead.getElementsByTagName("th")[iBefore],
           );
           if (nTrFoot) {
             nTrFoot.insertBefore(
               anTfootTh[iCol],
-              nTrFoot.getElementsByTagName("th")[iBefore]
+              nTrFoot.getElementsByTagName("th")[iBefore],
             );
           }
           anTds = _fnGetTdNodes(oSettings);
@@ -2085,7 +2085,7 @@ BibTex.prototype = {
             nTd = oSettings.aoData[i]._anHidden[iCol];
             oSettings.aoData[i].nTr.insertBefore(
               nTd,
-              $(">td:eq(" + iBefore + ")", oSettings.aoData[i].nTr)[0]
+              $(">td:eq(" + iBefore + ")", oSettings.aoData[i].nTr)[0],
             );
           }
         }
@@ -2119,7 +2119,7 @@ BibTex.prototype = {
     function _fnExternApiFunc(sFunc) {
       return function () {
         var aArgs = [_fnSettingsFromNode(this[_oExt.iApiIndex])].concat(
-          Array.prototype.slice.call(arguments)
+          Array.prototype.slice.call(arguments),
         );
         return _oExt.oApi[sFunc].apply(this, aArgs);
       };
@@ -2280,7 +2280,7 @@ BibTex.prototype = {
     function _fnAddData(oSettings, aData) {
       if (aData.length != oSettings.aoColumns.length) {
         alert(
-          "DataTables warning: Added data does not match known number of columns"
+          "DataTables warning: Added data does not match known number of columns",
         );
         return -1;
       }
@@ -2391,7 +2391,7 @@ BibTex.prototype = {
             nTrs.length * oSettings.aoColumns.length +
             " and got " +
             nTds.length +
-            ". DataTables does not support rowspan / colspan in the table body, and there must be one cell for each row/column combination."
+            ". DataTables does not support rowspan / colspan in the table body, and there must be one cell for each row/column combination.",
         );
       }
       for (
@@ -2420,7 +2420,7 @@ BibTex.prototype = {
             if (bAutoType) {
               if (oSettings.aoColumns[iColumn].sType != "string") {
                 sThisType = _fnDetectType(
-                  oSettings.aoData[iRow]._aData[iColumn]
+                  oSettings.aoData[iRow]._aData[iColumn],
                 );
                 if (oSettings.aoColumns[iColumn].sType === null) {
                   oSettings.aoColumns[iColumn].sType = sThisType;
@@ -2496,7 +2496,7 @@ BibTex.prototype = {
         for (i = 0, iLen = oSettings.aoColumns.length; i < iLen; i++) {
           oSettings.aoColumns[i].nTh.insertBefore(
             document.createElement("span"),
-            oSettings.aoColumns[i].nTh.firstChild
+            oSettings.aoColumns[i].nTh.firstChild,
           );
         }
       }
@@ -2506,7 +2506,7 @@ BibTex.prototype = {
             _fnSortAttachListener(oSettings, oSettings.aoColumns[i].nTh, i);
           } else {
             $(oSettings.aoColumns[i].nTh).addClass(
-              oSettings.oClasses.sSortableNone
+              oSettings.oClasses.sSortableNone,
             );
           }
         }
@@ -2575,11 +2575,11 @@ BibTex.prototype = {
               nRow,
               oSettings.aoData[oSettings.aiDisplay[j]]._aData,
               iRowCount,
-              j
+              j,
             );
             if (!nRow && !bRowError) {
               alert(
-                "DataTables warning: A node was not returned by fnRowCallback"
+                "DataTables warning: A node was not returned by fnRowCallback",
               );
               bRowError = true;
             }
@@ -2612,7 +2612,7 @@ BibTex.prototype = {
           _fnGetDataMaster(oSettings),
           oSettings._iDisplayStart,
           oSettings.fnDisplayEnd(),
-          oSettings.aiDisplay
+          oSettings.aiDisplay,
         );
       }
       if (typeof oSettings.fnFooterCallback == "function") {
@@ -2621,7 +2621,7 @@ BibTex.prototype = {
           _fnGetDataMaster(oSettings),
           oSettings._iDisplayStart,
           oSettings.fnDisplayEnd(),
-          oSettings.aiDisplay
+          oSettings.aiDisplay,
         );
       }
       var nBody = oSettings.nTable.getElementsByTagName("tbody");
@@ -2792,11 +2792,11 @@ BibTex.prototype = {
       var nInsertNode = nWrapper;
       var sDom = oSettings.sDom.replace(
         "H",
-        "fg-toolbar ui-widget-header ui-corner-tl ui-corner-tr ui-helper-clearfix"
+        "fg-toolbar ui-widget-header ui-corner-tl ui-corner-tr ui-helper-clearfix",
       );
       sDom = sDom.replace(
         "F",
-        "fg-toolbar ui-widget-header ui-corner-bl ui-corner-br ui-helper-clearfix"
+        "fg-toolbar ui-widget-header ui-corner-bl ui-corner-br ui-helper-clearfix",
       );
       var aDom = sDom.split("");
       var nTmp, iPushFeature, cOption, nNewNode, cNext, sClass, j;
@@ -2924,7 +2924,7 @@ BibTex.prototype = {
           oSettings,
           oSettings.aoPreSearchCols[i].sSearch,
           i,
-          oSettings.aoPreSearchCols[i].bEscapeRegex
+          oSettings.aoPreSearchCols[i].bEscapeRegex,
         );
       }
       if (_oExt.afnFiltering.length !== 0) {
@@ -2946,7 +2946,7 @@ BibTex.prototype = {
             !afnFilters[i](
               oSettings,
               oSettings.aoData[iDisIndex]._aData,
-              iDisIndex
+              iDisIndex,
             )
           ) {
             oSettings.aiDisplay.splice(j - iCorrector, 1);
@@ -2965,7 +2965,7 @@ BibTex.prototype = {
       for (var i = oSettings.aiDisplay.length - 1; i >= 0; i--) {
         var sData = _fnDataToSearch(
           oSettings.aoData[oSettings.aiDisplay[i]]._aData[iColumn],
-          oSettings.aoColumns[iColumn].sType
+          oSettings.aoColumns[iColumn].sType,
         );
         if (!rpSearch.test(sData)) {
           oSettings.aiDisplay.splice(i, 1);
@@ -3126,7 +3126,7 @@ BibTex.prototype = {
             for (var i = 0; i < iLen; i++) {
               iTest = oSort[aAirSort[i][1]](
                 aoData[a]._aData[aAirSort[i][0]],
-                aoData[b]._aData[aAirSort[i][0]]
+                aoData[b]._aData[aAirSort[i][0]],
               );
               if (iTest !== 0) {
                 return iTest;
@@ -3238,7 +3238,7 @@ BibTex.prototype = {
               " " +
               oClasses.sSortDesc +
               " " +
-              oSettings.aoColumns[i].sSortingClass
+              oSettings.aoColumns[i].sSortingClass,
           );
         }
       }
@@ -3271,7 +3271,7 @@ BibTex.prototype = {
                 " " +
                 oClasses.sSortJUIAscAllowed +
                 " " +
-                oClasses.sSortJUIDescAllowed
+                oClasses.sSortJUIDescAllowed,
             );
             var sSpanClass;
             if (iFound == -1) {
@@ -3287,7 +3287,7 @@ BibTex.prototype = {
           }
         } else {
           $(oSettings.aoColumns[i].nTh).addClass(
-            oSettings.aoColumns[i].sSortingClass
+            oSettings.aoColumns[i].sSortingClass,
           );
         }
       }
@@ -3344,7 +3344,7 @@ BibTex.prototype = {
         function (oSettings) {
           _fnCalculateEnd(oSettings);
           _fnDraw(oSettings);
-        }
+        },
       );
       if (typeof oSettings.aanFeatures.p == "undefined") {
         oSettings.aoDrawCallback.push({
@@ -3354,7 +3354,7 @@ BibTex.prototype = {
               function (oSettings) {
                 _fnCalculateEnd(oSettings);
                 _fnDraw(oSettings);
-              }
+              },
             );
           },
           sName: "pagination",
@@ -3394,7 +3394,7 @@ BibTex.prototype = {
                   parseInt(
                     (oSettings.fnRecordsDisplay() - 1) /
                       oSettings._iDisplayLength,
-                    10
+                    10,
                   ) + 1;
                 oSettings._iDisplayStart =
                   (iPages - 1) * oSettings._iDisplayLength;
@@ -3441,7 +3441,7 @@ BibTex.prototype = {
             " " +
             oSettings.oLanguage.sInfoFiltered.replace(
               "_MAX_",
-              oSettings.fnRecordsTotal()
+              oSettings.fnRecordsTotal(),
             ) +
             oSettings.oLanguage.sInfoPostFix;
         } else {
@@ -3461,7 +3461,7 @@ BibTex.prototype = {
               " " +
               oSettings.oLanguage.sInfoFiltered.replace(
                 "_MAX_",
-                oSettings.fnRecordsTotal()
+                oSettings.fnRecordsTotal(),
               ) +
               oSettings.oLanguage.sInfoPostFix;
           }
@@ -3494,11 +3494,11 @@ BibTex.prototype = {
       nLength.className = oSettings.oClasses.sLength;
       nLength.innerHTML = oSettings.oLanguage.sLengthMenu.replace(
         "_MENU_",
-        sStdMenu
+        sStdMenu,
       );
       $(
         'select option[value="' + oSettings._iDisplayLength + '"]',
-        nLength
+        nLength,
       ).attr("selected", true);
       $("select", nLength).change(function (e) {
         var iVal = $(this).val();
@@ -3631,7 +3631,7 @@ BibTex.prototype = {
           if (oSettings.aoColumns[i].sWidth !== null) {
             iTmpWidth = _fnConvertToWidth(
               oSettings.aoColumns[i].sWidth,
-              oSettings.nTable.parentNode
+              oSettings.nTable.parentNode,
             );
             iTotalUserIpSize += iTmpWidth;
             oSettings.aoColumns[i].sWidth = iTmpWidth + "px";
@@ -3899,7 +3899,7 @@ BibTex.prototype = {
       _fnCreateCookie(
         "SpryMedia_DataTables_" + oSettings.sInstance,
         sValue,
-        oSettings.iCookieDuration
+        oSettings.iCookieDuration,
       );
     }
     function _fnLoadState(oSettings, oInit) {
@@ -4103,7 +4103,7 @@ BibTex.prototype = {
       for (i = 0, iLen = _aoSettings.length; i < iLen; i++) {
         if (_aoSettings[i].nTable == this) {
           alert(
-            "DataTables warning: Unable to re-initialise DataTable. Please use the API to make any configuration changes required."
+            "DataTables warning: Unable to re-initialise DataTable. Please use the API to make any configuration changes required.",
           );
           return _aoSettings[i];
         }
@@ -4334,11 +4334,11 @@ var bibtexify = (function ($) {
         type === "thesis" &&
         typeof entryData.type !== "undefined" &&
         Object.keys(bib2html.labels).find(
-          (key) => bib2html.labels[key] === entryData.type
+          (key) => bib2html.labels[key] === entryData.type,
         )
       ) {
         entryData.entryType = Object.keys(bib2html.labels).find(
-          (key) => bib2html.labels[key] === entryData.type
+          (key) => bib2html.labels[key] === entryData.type,
         );
       }
       var itemStr = htmlify(bib2html[type](entryData));
@@ -4349,7 +4349,7 @@ var bibtexify = (function ($) {
       }
       return itemStr.replace(
         /undefined[,.]?/g,
-        '<span class="undefined">missing</span>'
+        '<span class="undefined">missing</span>',
       );
     },
     label2html: function (type) {
@@ -4429,7 +4429,7 @@ var bibtexify = (function ($) {
         } else {
           if (auth.length == 2) {
             itemStr += uriencode(
-              splitName(auth[0].last) + "%26" + splitName(auth[1].last)
+              splitName(auth[0].last) + "%26" + splitName(auth[1].last),
             );
           } else {
             itemStr += uriencode(splitName(auth[0].last) + " et al");
@@ -4702,8 +4702,8 @@ var bibtexify = (function ($) {
           ],
           bPaginate: false,
         },
-        this.options.datatable
-      )
+        this.options.datatable,
+      ),
     );
     if (this.options.visualization) {
       this.addBarChart();
@@ -4852,7 +4852,7 @@ var bibtexify = (function ($) {
           [1, "desc"],
         ],
       },
-      opts
+      opts,
     );
     var $pubTable = $("#" + bibElemId).addClass("bibtable");
     if ($("#shutter").length === 0) {
@@ -4861,7 +4861,7 @@ var bibtexify = (function ($) {
     }
     if (options.visualization) {
       $pubTable.before(
-        '<div id="' + bibElemId + 'pubchart" class="bibchart"></div>'
+        '<div id="' + bibElemId + 'pubchart" class="bibchart"></div>',
       );
     }
     var $bibSrc;
